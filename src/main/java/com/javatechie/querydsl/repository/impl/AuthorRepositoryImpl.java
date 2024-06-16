@@ -11,11 +11,10 @@ import java.util.List;
 import java.util.Optional;
 
 public class AuthorRepositoryImpl extends BaseRepositoryImpl<Author, Integer> implements AuthorRepository {
-
-
-    public AuthorRepositoryImpl(EntityManager em) {
+    public AuthorRepositoryImpl( EntityManager em) {
         super(Author.class, em);
     }
+
 
     @Override
     public Optional<Author> findAuthorByEmail(String email) {

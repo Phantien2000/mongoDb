@@ -22,9 +22,9 @@ public abstract class BaseRepositoryImpl<T,ID> extends SimpleJpaRepository<T,ID>
         this.jpaQueryFactory=new JPAQueryFactory(em);
     }
 
-    @Override
-    public T findByIdMandatory(ID id) throws IllegalArgumentException {
-        return findById(id)
-                .orElseThrow(()->new IllegalArgumentException("entity not found with id "+id));
-    }
+//    @Override
+//    public T findByIdMandatory(ID id) throws IllegalArgumentException {
+//        return findById(id)
+//                .orElseThrow(()->new IllegalArgumentException("entity not found with id "+id));
+//    }
 }

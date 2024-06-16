@@ -1,0 +1,15 @@
+com\javatechie\querydsl\entity\QAuthor.class
+com\javatechie\querydsl\repository\BookRepository.class
+com\javatechie\querydsl\entity\Author.class
+com\javatechie\querydsl\repository\impl\BaseRepositoryImpl.class
+com\javatechie\querydsl\repository\impl\AuthorRepositoryImpl.class
+com\javatechie\querydsl\entity\QStatistic.class
+com\javatechie\querydsl\entity\Book.class
+com\javatechie\querydsl\repository\BaseRepository.class
+com\javatechie\querydsl\controller\AuthBookController.class
+com\javatechie\querydsl\entity\QBook.class
+com\javatechie\querydsl\dto\AuthorStatistic.class
+com\javatechie\querydsl\service\AuthBookService.class
+com\javatechie\querydsl\SpringDataJpaQuerydslApplication.class
+com\javatechie\querydsl\repository\AuthorRepository.class
+com\javatechie\querydsl\repository\impl\BookRepositoryImpl.class
