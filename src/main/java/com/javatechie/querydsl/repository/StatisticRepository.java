@@ -1,7 +1,9 @@
 package com.javatechie.querydsl.repository;
 
 import com.javatechie.querydsl.entity.Statistic;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface StatisticRepository extends JpaRepository<Statistic, Integer> {
+@Repository
+public interface StatisticRepository extends MongoRepository<Statistic, String> {
 }

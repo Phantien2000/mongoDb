@@ -1,6 +1,7 @@
 package com.javatechie.querydsl.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.javatechie.querydsl.dto.Param;
 import com.javatechie.querydsl.entity.Statistic;
 import com.javatechie.querydsl.service.StatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class StatisticController {
     }
 
     @GetMapping("/cd")
-    public JsonNode getWithCondition() {
-        return statisticService.getWithCondition();
+    public JsonNode getWithCondition(@RequestBody Param param) {
+        return statisticService.getWithCondition(param);
     }
 }
