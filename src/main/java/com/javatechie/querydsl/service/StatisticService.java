@@ -118,6 +118,7 @@ public class StatisticService {
         map.put("field3", result.get("_id"));
         map.put("totalNumber1", result.get("totalNumber1"));
         map.put("totalNumber2", result.get("totalNumber2"));
+
         return map;
     }
 }
