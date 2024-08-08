@@ -1,5 +1,6 @@
 package com.javatechie.querydsl.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javatechie.querydsl.dto.Param;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.*;
 import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -30,8 +32,19 @@ public class StatisticService {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    public List<Statistic> getAll() {
-        return statisticRepository.findAll();
+    public JsonNode getAll() throws JsonProcessingException {
+        List<Statistic> list = statisticRepository.findAll();
+         String jsonString = objectMapper.writeValueAsString(list);
+         JsonNode jsonNode = objectMapper.readTree(jsonString);
+         return  jsonNode;
+    }
+
+    public void delete() {
+        Criteria criteria = Criteria.where("number1").gt(3);
+        Query query= new Query()
+                .addCriteria(criteria);
+        mongoTemplate.remove(query, "statistic");
+
     }
 
     public void addStatistic(List<Statistic> statistics) {

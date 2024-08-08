@@ -1,5 +1,6 @@
 package com.javatechie.querydsl.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.javatechie.querydsl.dto.Param;
 import com.javatechie.querydsl.entity.Statistic;
@@ -16,13 +17,18 @@ public class StatisticController {
     private StatisticService statisticService;
 
     @GetMapping
-    public List<Statistic> getAll() {
+    public JsonNode getAll() throws JsonProcessingException {
         return statisticService.getAll();
     }
 
     @PostMapping
     public void addStatistics(@RequestBody List<Statistic> statisticList){
         statisticService.addStatistic(statisticList);
+    }
+
+    @DeleteMapping
+    public void deleteStatistic (){
+        statisticService.delete();
     }
 
     @GetMapping("/cd")
